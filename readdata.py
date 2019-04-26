@@ -13,11 +13,14 @@ def remove_blank_lines(file):
             yield line
 
 # データの読み込み
-def read_data():
+def read_data(filename = ""):
+	if filename == "":
+		filename = "data/iris.data"
+
 	array = []
-	i = 0
+
 	# データを行ごとに配列に追加
-	with open('iris.data') as file:
+	with open(filename) as file:
 		for line in remove_blank_lines(file):
 			array.append(line.rstrip().split(','))
 			
@@ -27,5 +30,8 @@ def read_data():
 	# 配列を行ごとに出力
 	# for row in array:
 	# 	print(row[-1])
-
+	
+	# for row in array:
+	# 	row.insert(len(row), row.pop(0)) 
+	
 	return array
