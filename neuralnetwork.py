@@ -1,7 +1,7 @@
 from random import random
 
 
-class NeuralNetwork():
+class NeuralNetwork:
 
     # 中間層の数の決め方？
     # One hidden layer is sufficient for the large majority of problems.
